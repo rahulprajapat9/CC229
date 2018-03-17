@@ -1,0 +1,173 @@
+        <offset>0</offset>
+      </formula>
+    </Transformer>
+  </Transformers>
+  <xi:include href="http:" parse="xml" xpointer="element(/1)"/>
+  <J1939>
+    <xi:include href="http:"/>
+  </J1939>
+  <!-- Units -->
+  <Units>
+    <Unit key="unit.bitfield">
+      <symbol xsi:type="MessageReference" value="label.unit.none"/>
+      <description xsi:type="MessageReference" value="label.unit.none"/>
+      <storeType xsi:type="NumericValueStoreType"/>
+    </Unit>
+    <Unit key="unit.textfield">
+      <symbol xsi:type="MessageReference" value="label.unit.textnone"/>
+      <description xsi:type="MessageReference" value="label.unit.textnone"/>
+      <storeType xsi:type="TextValueStoreType"/>
+    </Unit>
+    <Unit key="unit.boolfield">
+      <symbol xsi:type="MessageReference" value="label.unit.boolnone"/>
+      <description xsi:type="MessageReference" value="label.unit.boolnone"/>
+      <storeType xsi:type="BooleanValueStoreType"/>
+    </Unit>
+    <Unit key="unit.percentfield">
+      <symbol xsi:type="MessageReference" value="label.unit.percentnone"/>
+      <description xsi:type="MessageReference" value="label.unit.percentnone"/>
+      <storeType xsi:type="NumericValueStoreType"/>
+    </Unit>
+    <Unit key="unit.hourfield">
+      <symbol xsi:type="MessageReference" value="label.unit.hournone"/>
+      <description xsi:type="MessageReference" value="label.unit.hournone"/>
+      <storeType xsi:type="NumericValueStoreType"/>
+    </Unit>
+    <Unit key="unit.Clamped-free">
+      <symbol xsi:type="MessageReference" value="label.symbol.unit.Clamped-free"/>
+      <description xsi:type="MessageReference" value="label.symbol.unit.Clamped-free"/>
+      <storeType xsi:type="NumericValueStoreType"/>
+    </Unit>
+    <Unit key="unit.On-Off">
+      <symbol xsi:type="MessageReference" value="label.symbol.unit.On-Off"/>
+      <description xsi:type="MessageReference" value="label.symbol.unit.On-Off"/>
+      <storeType xsi:type="NumericValueStoreType"/>
+    </Unit>
+  </Units>
+  <!-- ValueDefinitions -->
+  <ValueDefinitions>
+    <ValueDefinition key="value.Pressure.Pump.1">
+      <description xsi:type="MessageReference" value="label.Pressure.Pump.1"/>
+      <unit>predefined.unit.pressure.BAR</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Pressure.Pump.2">
+      <description xsi:type="MessageReference" value="label.Pressure.Pump.2"/>
+      <unit>predefined.unit.pressure.BAR</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Carriage.position">
+      <description xsi:type="MessageReference" value="label.Carriage.position"/>
+      <unit>predefined.unit.length.METER</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Diesel.level">
+      <description xsi:type="MessageReference" value="label.Diesel.level"/>
+      <unit>unit.percentfield</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Ad.Blue.level">
+      <description xsi:type="MessageReference" value="label.Ad.Blue.level"/>
+      <unit>unit.percentfield</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Engine.temperature">
+      <description xsi:type="MessageReference" value="label.Engine.temperature"/>
+      <unit>predefined.unit.temperature.CELSIUS</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Carriage.status">
+      <description xsi:type="MessageReference" value="label.Carriage.status"/>
+      <unit>unit.Clamped-free</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Chockerline">
+      <description xsi:type="MessageReference" value="label.Chockerline"/>
+      <unit>unit.On-Off</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Mooring.sistem">
+      <description xsi:type="MessageReference" value="label.Mooring.sistem"/>
+      <unit>unit.On-Off</unit>
+    </ValueDefinition>
+    <ValueDefinition key="value.Joystick.1">
+      <description xsi:type="MessageReference" value="label.Joystick.1"/>
+      <unit>unit.percentfield</unit>
+    </ValueDefinition>
+  </ValueDefinitions>
+  <!-- ParsingDefinition -->
+  <ParsingDefinition>
+    <BinaryStreamDefinition src="CAN">
+      <CanMessage canId="0x184" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="16" length="48" endianness="BIG" signed="true" continueOnLastPostion="false">
+            <valueDefinition ref="value.Carriage.position"/>
+            <transformer ref="transformer.0_1.0"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+      <CanMessage canId="0x1B2" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="57" length="1" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Chockerline"/>
+          </IntValue>
+          <IntValue startPos="45" length="1" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Mooring.sistem"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+      <CanMessage canId="0x282" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="16" length="8" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Pressure.Pump.1"/>
+            <transformer ref="transformer.2.0"/>
+          </IntValue>
+          <IntValue startPos="8" length="8" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Pressure.Pump.2"/>
+            <transformer ref="transformer.2.0"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+      <CanMessage canId="0x2B2" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="56" length="8" endianness="BIG" signed="true" continueOnLastPostion="false">
+            <valueDefinition ref="value.Joystick.1"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+      <CanMessage canId="0x382" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="48" length="8" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Diesel.level"/>
+          </IntValue>
+          <IntValue startPos="40" length="8" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Engine.temperature"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+      <CanMessage canId="0x482" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="56" length="8" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Ad.Blue.level"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+      <CanMessage canId="0x7FF" canIdLength="11" mask="0x7FF" protocolStyle="GENERIC">
+        <Values>
+          <IntValue startPos="62" length="1" endianness="BIG" signed="false" continueOnLastPostion="false">
+            <valueDefinition ref="value.Carriage.status"/>
+          </IntValue>
+        </Values>
+      </CanMessage>
+    </BinaryStreamDefinition>
+  </ParsingDefinition>
+  <!-- ViewDefinitions -->
+  <ViewDefinitions>
+    <ViewDefinition key="view.Machine.Data" xsi:type="SimpleTableViewDefinition">
+      <title xsi:type="MessageReference" value="label.view.Machine.Data"/>
+      <ValueView valueDefinitionRef="value.Pressure.Pump.1" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Pressure.Pump.2" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Carriage.position" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Diesel.level" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Ad.Blue.level" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Engine.temperature" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Carriage.status" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Chockerline" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Mooring.sistem" format="%2.0f"/>
+      <ValueView valueDefinitionRef="value.Joystick.1" format="%2.0f"/>
+    </ViewDefinition>
+  </ViewDefinitions>
+  <!-- AccessPermission -->
+</DataConfig>
