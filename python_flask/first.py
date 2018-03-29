@@ -34,4 +34,4 @@ class A(object):
 #       being imported from another module, __name__ will be set to the module's name.
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run('0.0.0.0')
