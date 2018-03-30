@@ -96,7 +96,7 @@ def main():
             end_time = date + timedelta(days=1461, hours=-4)
 
             print(start_time)
-            print(end_time)     
+            print(end_time)
 
             start_time = start_time.isoformat() + 'Z'
             end_time = end_time.isoformat() + 'Z'
