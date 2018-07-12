@@ -1,2 +1,4 @@
 # CC229
-Stanford Andrew NG course assignments
+Stanford Andrew NG course assignments.
+
+It contains python experiments as well.
