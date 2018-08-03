@@ -1,3 +1,5 @@
 .idea/
 python/.idea/
 python_flask/.idea/
+python_flask/hiring_test.py
+python_flask/candidates.log
