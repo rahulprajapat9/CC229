@@ -1,0 +1,145 @@
+
+Rahuls-MacBook-Pro:sentdex_linear_regression rahulprajapat$ python lr_energy_forecast.py
+
+
+
+ -------- Running iteration for lag = 0 --------
+For model LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False),
+ R2_value = 0.0923515963844
+ RMSE = 86.7329385187
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0213680487371
+ RMSE = 90.0606198994
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='poly', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0556581834023
+ RMSE = 88.4687410472
+
+
+For model SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False),
+ R2_value = 0.228021281986
+ RMSE = 90.986625388
+
+
+
+
+
+ -------- Running iteration for lag = 1 --------
+For model LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False),
+ R2_value = 0.0781314899323
+ RMSE = 87.3206721602
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0153827575557
+ RMSE = 90.2435764112
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='poly', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0514724836035
+ RMSE = 88.5742629238
+
+
+For model SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False),
+ R2_value = 0.22427774962
+ RMSE = 91.4274089646
+
+
+
+
+
+ -------- Running iteration for lag = 2 --------
+For model LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False),
+ R2_value = 0.0710176254138
+ RMSE = 87.6079890368
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0106521269683
+ RMSE = 90.4095872778
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='poly', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0313432253785
+ RMSE = 89.4591844359
+
+
+For model SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False),
+ R2_value = 0.232640648758
+ RMSE = 92.4434595215
+
+
+
+
+
+ -------- Running iteration for lag = 3 --------
+For model LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False),
+ R2_value = 0.0710190993606
+ RMSE = 87.4933067751
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.00454977337231
+ RMSE = 90.5693421221
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='poly', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0363138965265
+ RMSE = 89.1126249012
+
+
+For model SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False),
+ R2_value = 0.230164765526
+ RMSE = 93.1662455126
+
+
+
+
+
+ -------- Running iteration for lag = 4 --------
+For model LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False),
+ R2_value = 0.0680649274877
+ RMSE = 87.6363457005
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = -0.00201764354167
+ RMSE = 90.8717969324
+
+
+For model SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='poly', max_iter=-1, shrinking=True, tol=0.001, verbose=False),
+ R2_value = 0.0333241897452
+ RMSE = 89.2548567402
+
+
+For model SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False),
+ R2_value = 0.242585551331
+ RMSE = 94.0428400613
