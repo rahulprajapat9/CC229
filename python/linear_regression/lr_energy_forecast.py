@@ -11,9 +11,20 @@ from matplotlib import style
 style.use('ggplot')
 
 
+def svc_param_selection(X, y, nfolds):
+    Cs = [0.001, 0.01, 0.1, 1, 10]
+    gammas = [0.001, 0.01, 0.1, 1]
+    param_grid = {'C': Cs, 'gamma' : gammas}
+    grid_search = model_selection.GridSearchCV(svm.SVC(kernel='rbf'), param_grid, cv=nfolds)
+    grid_search.fit(X, y)
+    grid_search.best_params_
+    return grid_search.best_params_
+
+
 dateparse = lambda dates: pandas.datetime.strptime(dates, '%Y-%m-%d %H:%M:%S')
 
 # 1. read_input
+# https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction
 energy_data_df = pandas.read_csv(
 	'../input/energydata_complete.csv',
 	index_col='date',
@@ -48,7 +59,14 @@ for lag in range(5):
 
 	# 4. forecast_ts
 
-	for model in [LinearRegression(), svm.SVR(), svm.SVR(kernel = 'poly'), svm.SVC()]:
+	print('finding optimal value for C and gamma...')
+	svc_params = svc_param_selection(X_train, y_train, None)
+	print(svc_params)
+	print('above are the optimal values of C and gamma')
+	time.sleep(55)
+
+	#for model in [LinearRegression(), svm.SVR(), svm.SVR(kernel = 'poly'), svm.SVC()]:
+	for model in [svm.SVC(C=1000)]:
 
 		rgr = model
 		#rgr = svm.SVR() #SVM SVR classifier #default kernel is linear
