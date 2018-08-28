@@ -27,8 +27,12 @@ dateparse = lambda dates: pandas.datetime.strptime(dates, '%Y-%m-%d %H:%M:%S')
 # https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/
 # Turbofan Engine Degradation Simulation Data Set
 
-data = pandas.read_csv('CMAPSSData/train_FD001.txt', sep=" ", header=None)
-print(data.head())
+data = pandas.read_csv('CMAPSSData/train_FD004.txt', sep=" ", header=None)
+
+
+data[0].plot()
+plt.show()
+
 time.sleep(55)
 
 # 2. organize_input
