@@ -24,12 +24,12 @@ def svc_param_selection(X, y, nfolds):
 dateparse = lambda dates: pandas.datetime.strptime(dates, '%Y-%m-%d %H:%M:%S')
 
 # 1. read_input
-# https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction
-energy_data_df = pandas.read_csv(
-	'../input/energydata_complete.csv',
-	index_col='date',
-	date_parser=dateparse
-)
+# https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/
+# Turbofan Engine Degradation Simulation Data Set
+
+data = pandas.read_csv('CMAPSSData/train_FD001.txt', sep=" ", header=None)
+print(data.head())
+time.sleep(55)
 
 # 2. organize_input
 energy_data_df.fillna(-99999, inplace=True)
