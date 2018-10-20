@@ -41,3 +41,6 @@
 	- drop database rahul_test_ts_db
 * measurements
 	- select count(*) from cpu_load_short
+
+## Get the total number measurements and display the number of rows
+- `influx -database telegraf -execute "show series" | tail -n +3 | awk -F, '{print $1}' | uniq | wc -l`
