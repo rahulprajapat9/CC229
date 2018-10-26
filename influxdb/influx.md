@@ -44,3 +44,6 @@
 
 ## Get the total number measurements and display the number of rows
 - `influx -database telegraf -execute "show series" | tail -n +3 | awk -F, '{print $1}' | uniq | wc -l`
+
+## Size of the influx database
+- `sudo du -sh /var/lib/influxdb/data/hindalco`
